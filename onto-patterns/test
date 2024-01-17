@@ -1,7 +1,0 @@
-[ {
-  "@id" : "http://www.semanticweb.org/marjan.alirezaie/ontologies/2024/0/test",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
-}, {
-  "@id" : "http://www.semanticweb.org/marjan.alirezaie/ontologies/2024/0/test#TestClass",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-} ]
