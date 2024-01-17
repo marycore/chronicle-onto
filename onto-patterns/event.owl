@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://flybits/PAC/ontologies/event"
+     xml:base="https://raw.githubusercontent.com/marycore/chronicle-onto/master/onto-patterns/event"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://flybits/PAC/ontologies/event">
-    <Prefix name="" IRI="http://www.semanticweb.org/marjan.alirezaie/ontologies/2024/0/untitled-ontology-17/"/>
+     ontologyIRI="https://raw.githubusercontent.com/marycore/chronicle-onto/master/onto-patterns/event">
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>

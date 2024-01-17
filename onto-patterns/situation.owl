@@ -12,33 +12,9 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://flybits/PAC/ontologies/emotion</Import>
-    <Import>http://flybits/PAC/ontologies/place</Import>
-    <Import>http://flybits/PAC/ontologies/time</Import>
     <Declaration>
         <Class IRI="#Situation"/>
     </Declaration>
-    <SubClassOf>
-        <Class IRI="#Situation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://flybits/PAC/ontologies/place#hasLocation"/>
-            <Class IRI="http://flybits/PAC/ontologies/place#Place"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Situation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://flybits/PAC/ontologies/time#hasDuration"/>
-            <Class IRI="http://flybits/PAC/ontologies/time#Duration"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Situation"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://flybits/PAC/ontologies/time#hasInterval"/>
-            <Class IRI="http://flybits/PAC/ontologies/time#Interval"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
 </Ontology>
 
 
