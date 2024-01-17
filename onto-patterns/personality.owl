@@ -1,0 +1,753 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://flybits/PAC/ontologies/personality"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://flybits/PAC/ontologies/personality">
+    <Prefix name="" IRI="http://flybits/PAC/ontologies/personality/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://flybits/PAC/ontologies/emotion</Import>
+    <Import>http://flybits/PAC/ontologies/event</Import>
+    <Import>http://flybits/PAC/ontologies/person</Import>
+    <Declaration>
+        <Class IRI="http://flybits/PAC/ontologies/person#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdventureTraveling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Agreeableness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Alexithymia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Authoritarianism"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BehavioralManifestation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Characteristic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClassicalEnthusiast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComfortFoodLover"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conscientiousness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CreativeHobbies"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CulturalExploration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DeadlineDriven"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnduranceTraining"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExperimentalFoodie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Extraversion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FoodPreference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GroupSocializer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthConsciousEater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IndependentWorker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Introversion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#JazzAficionado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeisureActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Machieavellianism"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MindfulPractices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MusicPreference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Narcissism"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NeedForAchievement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NeedForCognition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NetworkingProfessional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Neuroticism"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OCEAN"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OneOnOneCompanion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Openness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Optimism"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonalityTrait"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalSports"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PopMusicFan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RelaxationRetreat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Self-esteem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialInteractionStyle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoloFitness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TeamCollaborator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TeamSports"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VacationStyle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WorkHabit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#compatibleWithTrait"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#displayBehavior"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#elicitEmotion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPersonalityTrait"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://flybits/PAC/ontologies/emotion#Emotion"/>
+        <Class IRI="#Characteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://flybits/PAC/ontologies/emotion#Emotion"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="#Characteristic"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://flybits/PAC/ontologies/person#Person"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#displayBehavior"/>
+            <Class IRI="#BehavioralManifestation"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://flybits/PAC/ontologies/person#Person"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPersonalityTrait"/>
+            <Class IRI="#PersonalityTrait"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdventureTraveling"/>
+        <Class IRI="#VacationStyle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdventureTraveling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Extraversion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Agreeableness"/>
+        <Class IRI="#OCEAN"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Agreeableness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Empathy"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Agreeableness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Warmth"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Alexithymia"/>
+        <Class IRI="#PersonalityTrait"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Authoritarianism"/>
+        <Class IRI="#PersonalityTrait"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BehavioralManifestation"/>
+        <Class IRI="http://flybits/PAC/ontologies/event#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BehavioralManifestation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#PersonalityTrait"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClassicalEnthusiast"/>
+        <Class IRI="#MusicPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClassicalEnthusiast"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Openness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComfortFoodLover"/>
+        <Class IRI="#FoodPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComfortFoodLover"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Neuroticism"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conscientiousness"/>
+        <Class IRI="#OCEAN"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conscientiousness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Guilt"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conscientiousness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Pride"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conscientiousness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Satisfaction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CreativeHobbies"/>
+        <Class IRI="#LeisureActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CreativeHobbies"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Openness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CulturalExploration"/>
+        <Class IRI="#VacationStyle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CulturalExploration"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Openness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DeadlineDriven"/>
+        <Class IRI="#WorkHabit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DeadlineDriven"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Conscientiousness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnduranceTraining"/>
+        <Class IRI="#PhysicalActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnduranceTraining"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Conscientiousness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExperimentalFoodie"/>
+        <Class IRI="#FoodPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExperimentalFoodie"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Openness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Extraversion"/>
+        <Class IRI="#OCEAN"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Extraversion"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Excitement"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Extraversion"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Joy"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodPreference"/>
+        <Class IRI="#BehavioralManifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GroupSocializer"/>
+        <Class IRI="#SocialInteractionStyle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GroupSocializer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Extraversion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthConsciousEater"/>
+        <Class IRI="#FoodPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthConsciousEater"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Conscientiousness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IndependentWorker"/>
+        <Class IRI="#WorkHabit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IndependentWorker"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Introversion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Introversion"/>
+        <Class IRI="#PersonalityTrait"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#JazzAficionado"/>
+        <Class IRI="#MusicPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#JazzAficionado"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Agreeableness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeisureActivity"/>
+        <Class IRI="#BehavioralManifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Machieavellianism"/>
+        <Class IRI="#PersonalityTrait"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MindfulPractices"/>
+        <Class IRI="#LeisureActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MindfulPractices"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Neuroticism"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MusicPreference"/>
+        <Class IRI="#BehavioralManifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Narcissism"/>
+        <Class IRI="#PersonalityTrait"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NeedForAchievement"/>
+        <Class IRI="#PersonalityTrait"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NeedForCognition"/>
+        <Class IRI="#PersonalityTrait"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NetworkingProfessional"/>
+        <Class IRI="#SocialInteractionStyle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NetworkingProfessional"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Conscientiousness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Neuroticism"/>
+        <Class IRI="#OCEAN"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Neuroticism"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Anxiety"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Neuroticism"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Sadness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OCEAN"/>
+        <Class IRI="#PersonalityTrait"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OneOnOneCompanion"/>
+        <Class IRI="#SocialInteractionStyle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OneOnOneCompanion"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Introversion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Openness"/>
+        <Class IRI="#OCEAN"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Openness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Amazement"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Openness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Curiosity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Openness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Inspiration"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Optimism"/>
+        <Class IRI="#PersonalityTrait"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonalityTrait"/>
+        <Class IRI="#Characteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalActivity"/>
+        <Class IRI="#BehavioralManifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalSports"/>
+        <Class IRI="#LeisureActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalSports"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Extraversion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PopMusicFan"/>
+        <Class IRI="#MusicPreference"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PopMusicFan"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Extraversion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RelaxationRetreat"/>
+        <Class IRI="#VacationStyle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RelaxationRetreat"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Neuroticism"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Self-esteem"/>
+        <Class IRI="#PersonalityTrait"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialInteractionStyle"/>
+        <Class IRI="#BehavioralManifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoloFitness"/>
+        <Class IRI="#PhysicalActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoloFitness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Introversion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TeamCollaborator"/>
+        <Class IRI="#WorkHabit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TeamCollaborator"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Agreeableness"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TeamSports"/>
+        <Class IRI="#PhysicalActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TeamSports"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <Class IRI="#Extraversion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VacationStyle"/>
+        <Class IRI="#BehavioralManifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkHabit"/>
+        <Class IRI="#BehavioralManifestation"/>
+    </SubClassOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#compatibleWithTrait"/>
+        <Class IRI="#BehavioralManifestation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#elicitEmotion"/>
+        <Class IRI="#PersonalityTrait"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#compatibleWithTrait"/>
+        <Class IRI="#PersonalityTrait"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#displayBehavior"/>
+        <Class IRI="#BehavioralManifestation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#elicitEmotion"/>
+        <Class IRI="http://flybits/PAC/ontologies/emotion#Emotion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPersonalityTrait"/>
+        <Class IRI="#PersonalityTrait"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AdventureTraveling</IRI>
+        <Literal>Prefers active and adventurous vacations, often involving outdoor activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ClassicalEnthusiast</IRI>
+        <Literal>Prefers listening to classical music</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ComfortFoodLover</IRI>
+        <Literal>Often chooses foods that are comforting or familiar</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CreativeHobbies</IRI>
+        <Literal>Engages in creative activities like painting, writing, etc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CulturalExploration</IRI>
+        <Literal>Enjoys vacations focused on exploring new cultures and historical places</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DeadlineDriven</IRI>
+        <Literal>Highly efficient when working under tight deadlines (</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnduranceTraining</IRI>
+        <Literal>Enjoys long-distance running, cycling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ExperimentalFoodie</IRI>
+        <Literal>Likes trying new and exotic cuisines</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GroupSocializer</IRI>
+        <Literal>Enjoys socializing in large groups or at parties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HealthConsciousEater</IRI>
+        <Literal>refers healthy and nutritious food options</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IndependentWorker</IRI>
+        <Literal>Works best alone, values independence in the workplace</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#JazzAficionado</IRI>
+        <Literal>Likes listening to jazz music, often associated with introspection</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MindfulPractices</IRI>
+        <Literal>Enjoys activities like yoga, meditation (related to Neuroticism for stress management).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NetworkingProfessional</IRI>
+        <Literal>Engages in social interactions for professional advancement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OneOnOneCompanion</IRI>
+        <Literal>Prefers intimate gatherings or one-on-one interactions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PersonalityTrait</IRI>
+        <Literal>https://nobaproject.com/modules/personality-traits#:~:text=To%20have%20a%20personality%20trait,behaviors%20related%20to%20the%20trait.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalSports</IRI>
+        <Literal>Participates in sports or physical fitness activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PopMusicFan</IRI>
+        <Literal>Enjoys upbeat and popular music genres</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RelaxationRetreat</IRI>
+        <Literal>Prefers vacations that offer relaxation and tranquility, like beach resorts or spas  (related to Neuroticism for stress relief)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SoloFitness</IRI>
+        <Literal>Engages in solitary physical activities like swimming, weightlifting</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TeamCollaborator</IRI>
+        <Literal>Prefers working in team settings, enjoys collaboration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TeamSports</IRI>
+        <Literal>Prefers participating in team-based sports</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,1113 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/MON/person.owl#"
+     xml:base="https://w3id.org/MON/person.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:j.0="https://w3id.org/MON/person.owl#"
+     xmlns:j.1="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://w3id.org/MON/person.owl">
+        <owl:imports rdf:resource="https://w3id.org/MON/action.owl"/>
+        <owl:imports rdf:resource="https://w3id.org/MON/spatial.owl"/>
+        <owl:imports rdf:resource="https://w3id.org/MON/time.owl"/>
+        <dc:description rdf:resource="https://raw.githubusercontent.com/luigi-asprino/MON/main/src/Person.png"/>
+        <dc:description xml:lang="en">A &lt;tt&gt;person:Person&lt;/tt&gt; is defined as an agent having a gender (i.e. an individual of the class &lt;tt&gt;person:Sex&lt;/tt&gt;), a residence (i.e. a &lt;tt&gt;spatial:Residence&lt;/tt&gt;), a birth place (i.e. a &lt;tt&gt;spatial:City&lt;/tt&gt;), and an hometown (i.e. a &lt;tt&gt;spatial:City&lt;/tt&gt;).
+Persons are specialized in  &lt;tt&gt;person:Male&lt;/tt&gt; (defined as the persons having &lt;tt&gt;person:Male&lt;/tt&gt; as value of the property &lt;tt&gt;person:hasGender&lt;/tt&gt;, note that &lt;tt&gt;person:Male&lt;/tt&gt; and &lt;tt&gt;person:Female&lt;/tt&gt; are defined both as classes and as individuals of the class &lt;tt&gt;person:Gender&lt;/tt&gt;.) and  &lt;tt&gt;person:Female&lt;/tt&gt; (defined as the persons having &lt;tt&gt;person:Female&lt;/tt&gt; as value of the property &lt;tt&gt;person:hasGender&lt;/tt&gt;).
+Interestingly, the ontology gives the opportunity of defining other genders.
+The ontology also defines a hierarchy of relations among persons. The hierarchy is inspired to &lt;a href=&quot;http://vocab.org/relationship/&quot;&gt;Relationship Vocabulary&lt;/a&gt;.
+The top property of this hierarchy is &lt;tt&gt;person:hasRelationshipWith&lt;/tt&gt; that relates two persons having any kind of relationship.
+This property is specialized by forty sub-properties (e.g. &lt;tt&gt;person:childOf&lt;/tt&gt;, &lt;tt&gt;person:worksWith&lt;/tt&gt;).
+The domain and range  of the sub-properties is also specialized where needed.
+For example the domain of &lt;tt&gt;person:brotherOf&lt;/tt&gt; is &lt;tt&gt;person:Male&lt;/tt&gt;, whereas  the domain of &lt;tt&gt;person:sisterOf&lt;/tt&gt; is &lt;tt&gt;person:Female&lt;/tt&gt;.
+The ontology also defines proper inverse relation among the properties of the hierarchy.
+For example, &lt;tt&gt;person:grandparentOf&lt;/tt&gt; is defined as the inverse of &lt;tt&gt;person:grandchildOf&lt;/tt&gt;.
+The relationship properties are reported in the following table.
+
+&lt;style type=&quot;text/css&quot;&gt;
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-7zrl{text-align:left;vertical-align:bottom}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+&lt;/style&gt;
+&lt;table class=&quot;tg&quot;&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;tg-amwm&quot;&gt;Property&lt;/th&gt;
+    &lt;th class=&quot;tg-amwm&quot;&gt;Domain&lt;/th&gt;
+    &lt;th class=&quot;tg-amwm&quot;&gt;Range&lt;/th&gt;
+    &lt;th class=&quot;tg-amwm&quot;&gt;SubPropertyOf&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;auntOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Female&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;brotherOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Male&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;siblingOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;childInLawOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;childOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;closeFriendOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;colleagueOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;cousinOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;daughterInLawOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Female&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;childInLawOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;daughterOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Female&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;childOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;engagedTo&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;fatherInLaw&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Male&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;parentInLaw&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;fatherOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Male&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;parentOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;friendOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;grandchildOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;granddaughterOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Female&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;grandchildOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;grandfatherOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Male&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;grandparentOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;grandmotherOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Female&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;grandparentOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;grandparentOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;grandsonOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Male&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;grandchildOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;husbandOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Male&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;spouseOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;lifePartnerOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;livesWith&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;motherInLaw&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Female&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;parentInLaw&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;motherOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Female&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;parentOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;nephewOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Male&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;nieceOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Female&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;parentInLaw&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;parentOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;siblingOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;sisterOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Female&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;siblingOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;sonInLawOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Male&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;childInLawOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;sonOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Male&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;childOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;spouseOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;stepfatherOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Male&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;stepparentOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;stepmotherOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Female&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;stepparentOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;stepparentOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;uncleOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Male&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;wifeOf&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Female&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;spouseOf&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;worksWith&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-7zrl&quot;&gt;Person&lt;/td&gt;
+    &lt;td class=&quot;tg-0lax&quot;&gt;hasRelationshipWith&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</dc:description>
+        <dc:title xml:lang="en">Person Ontology</dc:title>
+        <j.1:coversRequirements xml:lang="en">When were a person born?</j.1:coversRequirements>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#auntOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#auntOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">aunt of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#brotherOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#brotherOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#siblingOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+        <rdfs:label xml:lang="en">brother of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#childInLawOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#childInLawOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdfs:comment xml:lang="en">A spouse of one&apos;s child.</rdfs:comment>
+        <rdfs:label xml:lang="en">child in law of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#childOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#childOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/MON/person.owl#parentOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">child of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#closeFriendOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#closeFriendOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">close friend of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#colleagueOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#colleagueOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">colleague of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#cousinOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#cousinOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="en">cousin of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#daughterInLawOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#daughterInLawOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#childInLawOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+        <rdfs:label xml:lang="en">daughter in law of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#daughterOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#daughterOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#childOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+        <rdfs:label xml:lang="en">daughter of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#engagedTo -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#engagedTo">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">engaged to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#fatherInLaw -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#fatherInLaw">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#parentInLaw"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+        <rdfs:comment xml:lang="en">A father-in-law is the father of a person&apos;s spouse.</rdfs:comment>
+        <rdfs:label xml:lang="en">father in law of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#fatherOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#fatherOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#parentOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+        <rdfs:label xml:lang="en">father of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#friendOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#friendOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">friend of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#grandchildOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#grandchildOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/MON/person.owl#grandparentOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">grandchild of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#granddaughterOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#granddaughterOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#grandchildOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+        <rdfs:label xml:lang="en">granddaughter of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#grandfatherOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#grandfatherOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#grandparentOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+        <rdfs:label xml:lang="en">grandfather of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#grandmotherOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#grandmotherOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#grandparentOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+        <rdfs:label xml:lang="en">grandmother of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#grandparentOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#grandparentOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">grandparent of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#grandsonOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#grandsonOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#grandchildOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+        <rdfs:label xml:lang="en">grandson of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#hasBirthPlace -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#hasBirthPlace">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/spatial.owl#hasPlace"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/spatial.owl#City"/>
+        <rdfs:comment xml:lang="en">It is used to connect a Person with a town where he/she was born.</rdfs:comment>
+        <rdfs:label xml:lang="en">has birth place</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#hasGender -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#hasGender">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Sex"/>
+        <rdfs:label xml:lang="en">has gender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#hasHometown -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#hasHometown">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/spatial.owl#hasPlace"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/spatial.owl#City"/>
+        <rdfs:comment xml:lang="en">It is used to connect a Person with a town where s/he grew up.</rdfs:comment>
+        <rdfs:label xml:lang="en">has hometown</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#hasRelationshipWith -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#hasRelationshipWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">has relationship with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#husbandOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#husbandOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#spouseOf"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/MON/person.owl#wifeOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+        <rdfs:label xml:lang="en">husband of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#lifePartnerOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#lifePartnerOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">life partner of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#livesIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#livesIn">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/spatial.owl#hasPlace"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/spatial.owl#SpatialThing"/>
+        <rdfs:comment xml:lang="en">It is used to connect a Person with the Place where s/he currently lives in.</rdfs:comment>
+        <rdfs:label xml:lang="en">lives in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#livesWith -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#livesWith">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">lives with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#motherInLaw -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#motherInLaw">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#parentInLaw"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+        <rdfs:comment xml:lang="en">A mother-in-law is the mother of a person&apos;s spouse.</rdfs:comment>
+        <rdfs:label xml:lang="en">mother in law of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#motherOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#motherOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#parentOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+        <rdfs:label xml:lang="en">mother of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#nephewOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#nephewOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">nephew of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#nieceOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#nieceOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">niece of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#parentInLaw -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#parentInLaw">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdfs:label xml:lang="en">parent in law of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#parentOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#parentOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">parent of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#siblingOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#siblingOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">sibling of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#sisterOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#sisterOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#siblingOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+        <rdfs:label xml:lang="en">sister of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#sonInLawOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#sonInLawOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#childInLawOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+        <rdfs:label xml:lang="en">son in law of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#sonOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#sonOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#childOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+        <rdfs:label xml:lang="en">son of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#spouseOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#spouseOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">spouse of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#stepfatherOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#stepfatherOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#stepparentOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+        <rdfs:comment xml:lang="en">Mother&apos;s spouse</rdfs:comment>
+        <rdfs:label xml:lang="en">stepfather of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#stepmotherOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#stepmotherOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#stepparentOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+        <rdfs:comment xml:lang="en">Father&apos;s spouse</rdfs:comment>
+        <rdfs:label xml:lang="en">stepmother of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#stepparentOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#stepparentOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdfs:comment xml:lang="en">Mother&apos;s spouse or father&apos;s spouse.</rdfs:comment>
+        <rdfs:label xml:lang="en">stepparent of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#uncleOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#uncleOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">uncle of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#wifeOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#wifeOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#spouseOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+        <rdfs:label xml:lang="en">wife of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#worksWith -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/person.owl#worksWith">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/MON/person.owl#hasRelationshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">works with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/MON/spatial.owl#hasPlace -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/spatial.owl#hasPlace"/>
+    
+
+
+    <!-- https://w3id.org/MON/spatial.owl#hasResidence -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/MON/spatial.owl#hasResidence">
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:label xml:lang="en">has residence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#birthDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/MON/person.owl#birthDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">birth date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#deathDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/MON/person.owl#deathDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">death date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#firstName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/MON/person.owl#firstName">
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">first name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#lastName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/MON/person.owl#lastName">
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">last name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#maidenName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/MON/person.owl#maidenName">
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The original surname of a married woman who uses her husband&apos;s surname name after marriage.</rdfs:comment>
+        <rdfs:label xml:lang="en">maiden name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#nickname -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/MON/person.owl#nickname">
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A familiar name given to a person or thing instead of or as well as the real name.</rdfs:comment>
+        <rdfs:label xml:lang="en">nickname</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#personalHomepage -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/MON/person.owl#personalHomepage">
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label xml:lang="en">personal homepage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#personalMailbox -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/MON/person.owl#personalMailbox">
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label xml:lang="en">personal mailbox</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#phone -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/MON/person.owl#phone">
+        <rdfs:domain rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">phone number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/MON/action.owl#Agent -->
+
+    <owl:Class rdf:about="https://w3id.org/MON/action.owl#Agent">
+        <owl:disjointWith rdf:resource="https://w3id.org/MON/person.owl#Sex"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/MON/spatial.owl#City"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/MON/spatial.owl#SpatialThing"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/MON/time.owl#TemporalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#Female -->
+
+    <owl:Class rdf:about="https://w3id.org/MON/person.owl#Female">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/MON/person.owl#hasGender"/>
+                <owl:hasValue rdf:resource="https://w3id.org/MON/person.owl#Female"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#Male -->
+
+    <owl:Class rdf:about="https://w3id.org/MON/person.owl#Male">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/MON/person.owl#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/MON/person.owl#hasGender"/>
+                <owl:hasValue rdf:resource="https://w3id.org/MON/person.owl#Male"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#Person -->
+
+    <owl:Class rdf:about="https://w3id.org/MON/person.owl#Person">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/MON/action.owl#Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/MON/person.owl#hasGender"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/MON/person.owl#Sex"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/MON/spatial.owl#hasResidence"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/MON/spatial.owl#Residence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/MON/person.owl#hasBirthPlace"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/MON/spatial.owl#City"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/MON/person.owl#hasHometown"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/MON/spatial.owl#City"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A human being regarded as an individual.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#Sex -->
+
+    <owl:Class rdf:about="https://w3id.org/MON/person.owl#Sex">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/MON/spatial.owl#City"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/MON/spatial.owl#SpatialThing"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/MON/time.owl#TemporalEntity"/>
+        <rdfs:label>Sex</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/MON/spatial.owl#City -->
+
+    <owl:Class rdf:about="https://w3id.org/MON/spatial.owl#City"/>
+    
+
+
+    <!-- https://w3id.org/MON/spatial.owl#Residence -->
+
+    <owl:Class rdf:about="https://w3id.org/MON/spatial.owl#Residence"/>
+    
+
+
+    <!-- https://w3id.org/MON/spatial.owl#SpatialThing -->
+
+    <owl:Class rdf:about="https://w3id.org/MON/spatial.owl#SpatialThing"/>
+    
+
+
+    <!-- https://w3id.org/MON/time.owl#TemporalEntity -->
+
+    <rdf:Description rdf:about="https://w3id.org/MON/time.owl#TemporalEntity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#Female -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/MON/person.owl#Female">
+        <rdf:type rdf:resource="https://w3id.org/MON/person.owl#Sex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/MON/person.owl#Male -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/MON/person.owl#Male">
+        <rdf:type rdf:resource="https://w3id.org/MON/person.owl#Sex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://w3id.org/MON/person.owl#Female">
+        <rdfs:label xml:lang="en">Female</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/MON/person.owl#Male">
+        <rdfs:label xml:lang="en">Male</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/MON/person.owl#Female"/>
+            <rdf:Description rdf:about="https://w3id.org/MON/person.owl#Male"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
