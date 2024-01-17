@@ -1,355 +1,213 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://flybits/PAC/ontologies/time/"
-     xml:base="http://flybits/PAC/ontologies/time/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://flybits/PAC/ontologies/time"/>
-    
+Prefix: : <http://flybits/PAC/ontologies/time/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+
+Ontology: <http://flybits/PAC/ontologies/time>
+
+
+Datatype: owl:real
 
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#hasDuration -->
-
-    <owl:ObjectProperty rdf:about="http://flybits/PAC/ontologies/time#hasDuration">
-        <rdfs:range rdf:resource="http://flybits/PAC/ontologies/time#Duration"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://flybits/PAC/ontologies/time#hasInterval -->
-
-    <owl:ObjectProperty rdf:about="http://flybits/PAC/ontologies/time#hasInterval">
-        <rdfs:range rdf:resource="http://flybits/PAC/ontologies/time#Interval"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://flybits/PAC/ontologies/time#hasTemporalUnit -->
-
-    <owl:ObjectProperty rdf:about="http://flybits/PAC/ontologies/time#hasTemporalUnit">
-        <rdfs:range rdf:resource="http://flybits/PAC/ontologies/time#TemporalUnit"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+Datatype: xsd:dateTime
 
     
+ObjectProperty: <http://flybits/PAC/ontologies/time#hasDuration>
 
-
-    <!-- http://flybits/PAC/ontologies/time#endTime -->
-
-    <owl:DatatypeProperty rdf:about="http://flybits/PAC/ontologies/time#endTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
+    Range: 
+        <http://flybits/PAC/ontologies/time#Duration>
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#hasDateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://flybits/PAC/ontologies/time#hasDateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
     
+ObjectProperty: <http://flybits/PAC/ontologies/time#hasInterval>
 
-
-    <!-- http://flybits/PAC/ontologies/time#hasValue -->
-
-    <owl:DatatypeProperty rdf:about="http://flybits/PAC/ontologies/time#hasValue">
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
-    </owl:DatatypeProperty>
+    Range: 
+        <http://flybits/PAC/ontologies/time#Interval>
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#startTime -->
-
-    <owl:DatatypeProperty rdf:about="http://flybits/PAC/ontologies/time#startTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
     
+ObjectProperty: <http://flybits/PAC/ontologies/time#hasTemporalUnit>
 
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
+    Range: 
+        <http://flybits/PAC/ontologies/time#TemporalUnit>
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#Duration -->
-
-    <owl:Class rdf:about="http://flybits/PAC/ontologies/time#Duration">
-        <rdfs:subClassOf rdf:resource="http://flybits/PAC/ontologies/time#TemporalEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://flybits/PAC/ontologies/time#hasTemporalUnit"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://flybits/PAC/ontologies/time#TemporalUnit"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://flybits/PAC/ontologies/time#hasValue"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#real"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
     
+DataProperty: <http://flybits/PAC/ontologies/time#endTime>
 
-
-    <!-- http://flybits/PAC/ontologies/time#Instant -->
-
-    <owl:Class rdf:about="http://flybits/PAC/ontologies/time#Instant">
-        <rdfs:subClassOf rdf:resource="http://flybits/PAC/ontologies/time#TemporalEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://flybits/PAC/ontologies/time#hasDateTime"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
+    Range: 
+        xsd:dateTime
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#Interval -->
-
-    <owl:Class rdf:about="http://flybits/PAC/ontologies/time#Interval">
-        <rdfs:subClassOf rdf:resource="http://flybits/PAC/ontologies/time#TemporalEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://flybits/PAC/ontologies/time#endTime"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://flybits/PAC/ontologies/time#startTime"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
     
+DataProperty: <http://flybits/PAC/ontologies/time#hasDateTime>
 
-
-    <!-- http://flybits/PAC/ontologies/time#PartOfDay -->
-
-    <owl:Class rdf:about="http://flybits/PAC/ontologies/time#PartOfDay">
-        <rdfs:subClassOf rdf:resource="http://flybits/PAC/ontologies/time#TemporalEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://flybits/PAC/ontologies/time#hasInterval"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://flybits/PAC/ontologies/time#Interval"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
+    Range: 
+        xsd:dateTime
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#Season -->
-
-    <owl:Class rdf:about="http://flybits/PAC/ontologies/time#Season">
-        <rdfs:subClassOf rdf:resource="http://flybits/PAC/ontologies/time#TemporalEntity"/>
-    </owl:Class>
     
+DataProperty: <http://flybits/PAC/ontologies/time#hasValue>
 
-
-    <!-- http://flybits/PAC/ontologies/time#TemporalEntity -->
-
-    <owl:Class rdf:about="http://flybits/PAC/ontologies/time#TemporalEntity"/>
+    Range: 
+        owl:real
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#TemporalUnit -->
-
-    <owl:Class rdf:about="http://flybits/PAC/ontologies/time#TemporalUnit">
-        <rdfs:subClassOf rdf:resource="http://flybits/PAC/ontologies/time#TemporalEntity"/>
-    </owl:Class>
     
+DataProperty: <http://flybits/PAC/ontologies/time#startTime>
 
+    Range: 
+        xsd:dateTime
+    
+    
+Class: <http://flybits/PAC/ontologies/time#Duration>
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+    SubClassOf: 
+        <http://flybits/PAC/ontologies/time#TemporalEntity>,
+        <http://flybits/PAC/ontologies/time#hasTemporalUnit> exactly 1 <http://flybits/PAC/ontologies/time#TemporalUnit>,
+        <http://flybits/PAC/ontologies/time#hasValue> exactly 1 owl:real
+    
+    
+Class: <http://flybits/PAC/ontologies/time#Instant>
+
+    SubClassOf: 
+        <http://flybits/PAC/ontologies/time#TemporalEntity>,
+        <http://flybits/PAC/ontologies/time#hasDateTime> exactly 1 xsd:dateTime
+    
+    
+Class: <http://flybits/PAC/ontologies/time#Interval>
+
+    SubClassOf: 
+        <http://flybits/PAC/ontologies/time#TemporalEntity>,
+        <http://flybits/PAC/ontologies/time#endTime> exactly 1 xsd:dateTime,
+        <http://flybits/PAC/ontologies/time#startTime> exactly 1 xsd:dateTime
+    
+    
+Class: <http://flybits/PAC/ontologies/time#PartOfDay>
+
+    SubClassOf: 
+        <http://flybits/PAC/ontologies/time#TemporalEntity>,
+        <http://flybits/PAC/ontologies/time#hasInterval> exactly 1 <http://flybits/PAC/ontologies/time#Interval>
+    
+    
+Class: <http://flybits/PAC/ontologies/time#Season>
+
+    SubClassOf: 
+        <http://flybits/PAC/ontologies/time#TemporalEntity>
+    
+    
+Class: <http://flybits/PAC/ontologies/time#TemporalEntity>
 
     
+Class: <http://flybits/PAC/ontologies/time#TemporalUnit>
 
-
-    <!-- http://flybits/PAC/ontologies/time#Fall -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#Fall">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#Season"/>
-    </owl:NamedIndividual>
+    SubClassOf: 
+        <http://flybits/PAC/ontologies/time#TemporalEntity>
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#afternoon -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#afternoon">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#PartOfDay"/>
-    </owl:NamedIndividual>
     
+Individual: <http://flybits/PAC/ontologies/time#Fall>
 
-
-    <!-- http://flybits/PAC/ontologies/time#day -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#day">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#TemporalUnit"/>
-    </owl:NamedIndividual>
+    Types: 
+        <http://flybits/PAC/ontologies/time#Season>
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#early-morning -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#early-morning">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#PartOfDay"/>
-    </owl:NamedIndividual>
     
+Individual: <http://flybits/PAC/ontologies/time#afternoon>
 
-
-    <!-- http://flybits/PAC/ontologies/time#evening -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#evening">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#PartOfDay"/>
-    </owl:NamedIndividual>
+    Types: 
+        <http://flybits/PAC/ontologies/time#PartOfDay>
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#hour -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#hour">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#TemporalUnit"/>
-    </owl:NamedIndividual>
     
+Individual: <http://flybits/PAC/ontologies/time#day>
 
-
-    <!-- http://flybits/PAC/ontologies/time#mid-night -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#mid-night">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#PartOfDay"/>
-    </owl:NamedIndividual>
+    Types: 
+        <http://flybits/PAC/ontologies/time#TemporalUnit>
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#minute -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#minute">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#TemporalUnit"/>
-    </owl:NamedIndividual>
     
+Individual: <http://flybits/PAC/ontologies/time#early-morning>
 
-
-    <!-- http://flybits/PAC/ontologies/time#month -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#month">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#TemporalUnit"/>
-    </owl:NamedIndividual>
+    Types: 
+        <http://flybits/PAC/ontologies/time#PartOfDay>
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#morning -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#morning">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#PartOfDay"/>
-    </owl:NamedIndividual>
     
+Individual: <http://flybits/PAC/ontologies/time#evening>
 
-
-    <!-- http://flybits/PAC/ontologies/time#night -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#night">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#PartOfDay"/>
-    </owl:NamedIndividual>
+    Types: 
+        <http://flybits/PAC/ontologies/time#PartOfDay>
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#noon -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#noon">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#PartOfDay"/>
-    </owl:NamedIndividual>
     
+Individual: <http://flybits/PAC/ontologies/time#hour>
 
-
-    <!-- http://flybits/PAC/ontologies/time#second -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#second">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#TemporalUnit"/>
-    </owl:NamedIndividual>
+    Types: 
+        <http://flybits/PAC/ontologies/time#TemporalUnit>
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#spring -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#spring">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#Season"/>
-    </owl:NamedIndividual>
     
+Individual: <http://flybits/PAC/ontologies/time#mid-night>
 
-
-    <!-- http://flybits/PAC/ontologies/time#summer -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#summer">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#Season"/>
-    </owl:NamedIndividual>
+    Types: 
+        <http://flybits/PAC/ontologies/time#PartOfDay>
     
-
-
-    <!-- http://flybits/PAC/ontologies/time#week -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#week">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#TemporalUnit"/>
-    </owl:NamedIndividual>
     
+Individual: <http://flybits/PAC/ontologies/time#minute>
 
-
-    <!-- http://flybits/PAC/ontologies/time#winter -->
-
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#winter">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#Season"/>
-    </owl:NamedIndividual>
+    Types: 
+        <http://flybits/PAC/ontologies/time#TemporalUnit>
     
+    
+Individual: <http://flybits/PAC/ontologies/time#month>
 
+    Types: 
+        <http://flybits/PAC/ontologies/time#TemporalUnit>
+    
+    
+Individual: <http://flybits/PAC/ontologies/time#morning>
 
-    <!-- http://flybits/PAC/ontologies/time#year -->
+    Types: 
+        <http://flybits/PAC/ontologies/time#PartOfDay>
+    
+    
+Individual: <http://flybits/PAC/ontologies/time#night>
 
-    <owl:NamedIndividual rdf:about="http://flybits/PAC/ontologies/time#year">
-        <rdf:type rdf:resource="http://flybits/PAC/ontologies/time#TemporalUnit"/>
-    </owl:NamedIndividual>
-</rdf:RDF>
+    Types: 
+        <http://flybits/PAC/ontologies/time#PartOfDay>
+    
+    
+Individual: <http://flybits/PAC/ontologies/time#noon>
 
+    Types: 
+        <http://flybits/PAC/ontologies/time#PartOfDay>
+    
+    
+Individual: <http://flybits/PAC/ontologies/time#second>
 
+    Types: 
+        <http://flybits/PAC/ontologies/time#TemporalUnit>
+    
+    
+Individual: <http://flybits/PAC/ontologies/time#spring>
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+    Types: 
+        <http://flybits/PAC/ontologies/time#Season>
+    
+    
+Individual: <http://flybits/PAC/ontologies/time#summer>
 
+    Types: 
+        <http://flybits/PAC/ontologies/time#Season>
+    
+    
+Individual: <http://flybits/PAC/ontologies/time#week>
+
+    Types: 
+        <http://flybits/PAC/ontologies/time#TemporalUnit>
+    
+    
+Individual: <http://flybits/PAC/ontologies/time#winter>
+
+    Types: 
+        <http://flybits/PAC/ontologies/time#Season>
+    
+    
+Individual: <http://flybits/PAC/ontologies/time#year>
+
+    Types: 
+        <http://flybits/PAC/ontologies/time#TemporalUnit>
+    
+    
