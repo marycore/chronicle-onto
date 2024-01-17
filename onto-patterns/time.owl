@@ -1,282 +1,216 @@
-<?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://flybits/PAC/ontologies/time"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://flybits/PAC/ontologies/time">
-    <Prefix name="" IRI="http://flybits/PAC/ontologies/time/"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Declaration>
-        <Class IRI="#Duration"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Instant"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Interval"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PartOfDay"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Season"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TemporalEntity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TemporalUnit"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasDuration"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasInterval"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTemporalUnit"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#endTime"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasDateTime"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasValue"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#startTime"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Fall"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#afternoon"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#day"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#early-morning"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#evening"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#hour"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mid-night"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#minute"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#month"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#morning"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#night"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#noon"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#second"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#spring"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#summer"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#week"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#winter"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#year"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="#Duration"/>
-        <Class IRI="#TemporalEntity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Duration"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasTemporalUnit"/>
-            <Class IRI="#TemporalUnit"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Duration"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasValue"/>
-            <Datatype abbreviatedIRI="owl:real"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Instant"/>
-        <Class IRI="#TemporalEntity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Instant"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#hasDateTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Interval"/>
-        <Class IRI="#TemporalEntity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Interval"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#endTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Interval"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#startTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PartOfDay"/>
-        <Class IRI="#TemporalEntity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PartOfDay"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasInterval"/>
-            <Class IRI="#Interval"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Season"/>
-        <Class IRI="#TemporalEntity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#TemporalUnit"/>
-        <Class IRI="#TemporalEntity"/>
-    </SubClassOf>
-    <ClassAssertion>
-        <Class IRI="#Season"/>
-        <NamedIndividual IRI="#Fall"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#PartOfDay"/>
-        <NamedIndividual IRI="#afternoon"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#TemporalUnit"/>
-        <NamedIndividual IRI="#day"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#PartOfDay"/>
-        <NamedIndividual IRI="#early-morning"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#PartOfDay"/>
-        <NamedIndividual IRI="#evening"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#TemporalUnit"/>
-        <NamedIndividual IRI="#hour"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#PartOfDay"/>
-        <NamedIndividual IRI="#mid-night"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#TemporalUnit"/>
-        <NamedIndividual IRI="#minute"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#TemporalUnit"/>
-        <NamedIndividual IRI="#month"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#PartOfDay"/>
-        <NamedIndividual IRI="#morning"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#PartOfDay"/>
-        <NamedIndividual IRI="#night"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#PartOfDay"/>
-        <NamedIndividual IRI="#noon"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#TemporalUnit"/>
-        <NamedIndividual IRI="#second"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Season"/>
-        <NamedIndividual IRI="#spring"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Season"/>
-        <NamedIndividual IRI="#summer"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#TemporalUnit"/>
-        <NamedIndividual IRI="#week"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Season"/>
-        <NamedIndividual IRI="#winter"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#TemporalUnit"/>
-        <NamedIndividual IRI="#year"/>
-    </ClassAssertion>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasDuration"/>
-        <Class IRI="#Duration"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasInterval"/>
-        <Class IRI="#Interval"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasTemporalUnit"/>
-        <Class IRI="#TemporalUnit"/>
-    </ObjectPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#endTime"/>
-        <Datatype abbreviatedIRI="xsd:dateTime"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasDateTime"/>
-        <Datatype abbreviatedIRI="xsd:dateTime"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasValue"/>
-        <Datatype abbreviatedIRI="owl:real"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#startTime"/>
-        <Datatype abbreviatedIRI="xsd:dateTime"/>
-    </DataPropertyRange>
-</Ontology>
+@prefix : <http://flybits/PAC/ontologies/time/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://flybits/PAC/ontologies/time/> .
+
+<http://flybits/PAC/ontologies/time> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://flybits/PAC/ontologies/time#hasDuration
+:hasDuration rdf:type owl:ObjectProperty ;
+             rdfs:range :Duration .
 
 
+###  http://flybits/PAC/ontologies/time#hasInterval
+:hasInterval rdf:type owl:ObjectProperty ;
+             rdfs:range :Interval .
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
 
+###  http://flybits/PAC/ontologies/time#hasTemporalUnit
+:hasTemporalUnit rdf:type owl:ObjectProperty ;
+                 rdfs:range :TemporalUnit .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://flybits/PAC/ontologies/time#endTime
+:endTime rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:dateTime .
+
+
+###  http://flybits/PAC/ontologies/time#hasDateTime
+:hasDateTime rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:dateTime .
+
+
+###  http://flybits/PAC/ontologies/time#hasValue
+:hasValue rdf:type owl:DatatypeProperty ;
+          rdfs:range owl:real .
+
+
+###  http://flybits/PAC/ontologies/time#startTime
+:startTime rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://flybits/PAC/ontologies/time#Duration
+:Duration rdf:type owl:Class ;
+          rdfs:subClassOf :TemporalEntity ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTemporalUnit ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :TemporalUnit
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasValue ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange owl:real
+                          ] .
+
+
+###  http://flybits/PAC/ontologies/time#Instant
+:Instant rdf:type owl:Class ;
+         rdfs:subClassOf :TemporalEntity ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasDateTime ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:dateTime
+                         ] .
+
+
+###  http://flybits/PAC/ontologies/time#Interval
+:Interval rdf:type owl:Class ;
+          rdfs:subClassOf :TemporalEntity ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :endTime ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:dateTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :startTime ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:dateTime
+                          ] .
+
+
+###  http://flybits/PAC/ontologies/time#PartOfDay
+:PartOfDay rdf:type owl:Class ;
+           rdfs:subClassOf :TemporalEntity ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasInterval ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Interval
+                           ] .
+
+
+###  http://flybits/PAC/ontologies/time#Season
+:Season rdf:type owl:Class ;
+        rdfs:subClassOf :TemporalEntity .
+
+
+###  http://flybits/PAC/ontologies/time#TemporalEntity
+:TemporalEntity rdf:type owl:Class .
+
+
+###  http://flybits/PAC/ontologies/time#TemporalUnit
+:TemporalUnit rdf:type owl:Class ;
+              rdfs:subClassOf :TemporalEntity .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://flybits/PAC/ontologies/time#Fall
+:Fall rdf:type owl:NamedIndividual ,
+               :Season .
+
+
+###  http://flybits/PAC/ontologies/time#afternoon
+:afternoon rdf:type owl:NamedIndividual ,
+                    :PartOfDay .
+
+
+###  http://flybits/PAC/ontologies/time#day
+:day rdf:type owl:NamedIndividual ,
+              :TemporalUnit .
+
+
+###  http://flybits/PAC/ontologies/time#early-morning
+:early-morning rdf:type owl:NamedIndividual ,
+                        :PartOfDay .
+
+
+###  http://flybits/PAC/ontologies/time#evening
+:evening rdf:type owl:NamedIndividual ,
+                  :PartOfDay .
+
+
+###  http://flybits/PAC/ontologies/time#hour
+:hour rdf:type owl:NamedIndividual ,
+               :TemporalUnit .
+
+
+###  http://flybits/PAC/ontologies/time#mid-night
+:mid-night rdf:type owl:NamedIndividual ,
+                    :PartOfDay .
+
+
+###  http://flybits/PAC/ontologies/time#minute
+:minute rdf:type owl:NamedIndividual ,
+                 :TemporalUnit .
+
+
+###  http://flybits/PAC/ontologies/time#month
+:month rdf:type owl:NamedIndividual ,
+                :TemporalUnit .
+
+
+###  http://flybits/PAC/ontologies/time#morning
+:morning rdf:type owl:NamedIndividual ,
+                  :PartOfDay .
+
+
+###  http://flybits/PAC/ontologies/time#night
+:night rdf:type owl:NamedIndividual ,
+                :PartOfDay .
+
+
+###  http://flybits/PAC/ontologies/time#noon
+:noon rdf:type owl:NamedIndividual ,
+               :PartOfDay .
+
+
+###  http://flybits/PAC/ontologies/time#second
+:second rdf:type owl:NamedIndividual ,
+                 :TemporalUnit .
+
+
+###  http://flybits/PAC/ontologies/time#spring
+:spring rdf:type owl:NamedIndividual ,
+                 :Season .
+
+
+###  http://flybits/PAC/ontologies/time#summer
+:summer rdf:type owl:NamedIndividual ,
+                 :Season .
+
+
+###  http://flybits/PAC/ontologies/time#week
+:week rdf:type owl:NamedIndividual ,
+               :TemporalUnit .
+
+
+###  http://flybits/PAC/ontologies/time#winter
+:winter rdf:type owl:NamedIndividual ,
+                 :Season .
+
+
+###  http://flybits/PAC/ontologies/time#year
+:year rdf:type owl:NamedIndividual ,
+               :TemporalUnit .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
