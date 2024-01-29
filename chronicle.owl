@@ -13,6 +13,7 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>https://raw.githubusercontent.com/marycore/chronicle-onto/master/onto-patterns/personality.owl</Import>
+    <Import>https://raw.githubusercontent.com/marycore/chronicle-onto/master/onto-patterns/situation.owl</Import>
 </Ontology>
 
 

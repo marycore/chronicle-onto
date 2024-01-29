@@ -156,16 +156,16 @@
         <Class IRI="#WorkHabit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#compatibleWithTrait"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#displayBehavior"/>
+        <ObjectProperty IRI="#displaysBehavior"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#elicitsEmotion"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPersonalityTrait"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCompatibleWithTrait"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="http://flybits/PAC/ontologies/emotion#Emotion"/>
@@ -181,7 +181,7 @@
     <SubClassOf>
         <Class IRI="http://flybits/PAC/ontologies/person#Person"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#displayBehavior"/>
+            <ObjectProperty IRI="#displaysBehavior"/>
             <Class IRI="#BehavioralManifestation"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -199,7 +199,7 @@
     <SubClassOf>
         <Class IRI="#AdventureTraveling"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Extraversion"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -232,7 +232,7 @@
     <SubClassOf>
         <Class IRI="#BehavioralManifestation"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#PersonalityTrait"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -243,7 +243,7 @@
     <SubClassOf>
         <Class IRI="#ClassicalEnthusiast"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Openness"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -254,7 +254,7 @@
     <SubClassOf>
         <Class IRI="#ComfortFoodLover"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Neuroticism"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -290,7 +290,7 @@
     <SubClassOf>
         <Class IRI="#CreativeHobbies"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Openness"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -301,7 +301,7 @@
     <SubClassOf>
         <Class IRI="#CulturalExploration"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Openness"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -312,7 +312,7 @@
     <SubClassOf>
         <Class IRI="#DeadlineDriven"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Conscientiousness"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -323,7 +323,7 @@
     <SubClassOf>
         <Class IRI="#EnduranceTraining"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Conscientiousness"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -334,7 +334,7 @@
     <SubClassOf>
         <Class IRI="#ExperimentalFoodie"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Openness"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -367,7 +367,7 @@
     <SubClassOf>
         <Class IRI="#GroupSocializer"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Extraversion"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -378,7 +378,7 @@
     <SubClassOf>
         <Class IRI="#HealthConsciousEater"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Conscientiousness"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -389,7 +389,7 @@
     <SubClassOf>
         <Class IRI="#IndependentWorker"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Introversion"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -404,7 +404,7 @@
     <SubClassOf>
         <Class IRI="#JazzAficionado"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Agreeableness"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -423,7 +423,7 @@
     <SubClassOf>
         <Class IRI="#MindfulPractices"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Neuroticism"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -450,7 +450,7 @@
     <SubClassOf>
         <Class IRI="#NetworkingProfessional"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Conscientiousness"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -483,7 +483,7 @@
     <SubClassOf>
         <Class IRI="#OneOnOneCompanion"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Introversion"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -538,7 +538,7 @@
     <SubClassOf>
         <Class IRI="#PhysicalSports"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Extraversion"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -549,7 +549,7 @@
     <SubClassOf>
         <Class IRI="#PopMusicFan"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Extraversion"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -560,7 +560,7 @@
     <SubClassOf>
         <Class IRI="#RelaxationRetreat"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Neuroticism"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -579,7 +579,7 @@
     <SubClassOf>
         <Class IRI="#SoloFitness"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Introversion"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -590,7 +590,7 @@
     <SubClassOf>
         <Class IRI="#TeamCollaborator"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Agreeableness"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -601,7 +601,7 @@
     <SubClassOf>
         <Class IRI="#TeamSports"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#compatibleWithTrait"/>
+            <ObjectProperty IRI="#isCompatibleWithTrait"/>
             <Class IRI="#Extraversion"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -614,19 +614,15 @@
         <Class IRI="#BehavioralManifestation"/>
     </SubClassOf>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#compatibleWithTrait"/>
-        <Class IRI="#BehavioralManifestation"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#elicitsEmotion"/>
         <Class IRI="#PersonalityTrait"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCompatibleWithTrait"/>
+        <Class IRI="#BehavioralManifestation"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#compatibleWithTrait"/>
-        <Class IRI="#PersonalityTrait"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#displayBehavior"/>
+        <ObjectProperty IRI="#displaysBehavior"/>
         <Class IRI="#BehavioralManifestation"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -635,6 +631,10 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPersonalityTrait"/>
+        <Class IRI="#PersonalityTrait"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isCompatibleWithTrait"/>
         <Class IRI="#PersonalityTrait"/>
     </ObjectPropertyRange>
     <AnnotationAssertion>
