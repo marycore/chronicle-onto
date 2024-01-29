@@ -13,7 +13,6 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>https://raw.githubusercontent.com/marycore/chronicle-onto/master/onto-patterns/emotion.owl</Import>
-    <Import>https://raw.githubusercontent.com/marycore/chronicle-onto/master/onto-patterns/event.owl</Import>
     <Import>https://raw.githubusercontent.com/marycore/chronicle-onto/master/onto-patterns/person.owl</Import>
     <Declaration>
         <Class IRI="http://flybits/PAC/ontologies/person#Person"/>
@@ -163,7 +162,7 @@
         <ObjectProperty IRI="#displayBehavior"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#elicitEmotion"/>
+        <ObjectProperty IRI="#elicitsEmotion"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPersonalityTrait"/>
@@ -175,7 +174,7 @@
     <SubClassOf>
         <Class IRI="http://flybits/PAC/ontologies/emotion#Emotion"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="#Characteristic"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -211,14 +210,14 @@
     <SubClassOf>
         <Class IRI="#Agreeableness"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Empathy"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Agreeableness"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Warmth"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -229,10 +228,6 @@
     <SubClassOf>
         <Class IRI="#Authoritarianism"/>
         <Class IRI="#PersonalityTrait"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BehavioralManifestation"/>
-        <Class IRI="http://flybits/PAC/ontologies/event#Event"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#BehavioralManifestation"/>
@@ -270,21 +265,21 @@
     <SubClassOf>
         <Class IRI="#Conscientiousness"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Guilt"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Conscientiousness"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Pride"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Conscientiousness"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Satisfaction"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -350,14 +345,14 @@
     <SubClassOf>
         <Class IRI="#Extraversion"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Excitement"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Extraversion"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Joy"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -466,14 +461,14 @@
     <SubClassOf>
         <Class IRI="#Neuroticism"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Anxiety"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Neuroticism"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Sadness"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -499,21 +494,21 @@
     <SubClassOf>
         <Class IRI="#Openness"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Amazement"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Openness"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Curiosity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Openness"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#elicitEmotion"/>
+            <ObjectProperty IRI="#elicitsEmotion"/>
             <Class IRI="http://flybits/PAC/ontologies/emotion#Inspiration"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -524,6 +519,13 @@
     <SubClassOf>
         <Class IRI="#PersonalityTrait"/>
         <Class IRI="#Characteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonalityTrait"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#elicitsEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Emotion"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PhysicalActivity"/>
@@ -616,7 +618,7 @@
         <Class IRI="#BehavioralManifestation"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#elicitEmotion"/>
+        <ObjectProperty IRI="#elicitsEmotion"/>
         <Class IRI="#PersonalityTrait"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
@@ -628,7 +630,7 @@
         <Class IRI="#BehavioralManifestation"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#elicitEmotion"/>
+        <ObjectProperty IRI="#elicitsEmotion"/>
         <Class IRI="http://flybits/PAC/ontologies/emotion#Emotion"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>

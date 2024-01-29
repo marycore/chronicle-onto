@@ -12,13 +12,36 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://flybits/PAC/ontologies/person</Import>
     <Import>https://raw.githubusercontent.com/marycore/chronicle-onto/master/onto-patterns/emotion.owl</Import>
-    <Import>https://raw.githubusercontent.com/marycore/chronicle-onto/master/onto-patterns/event.owl</Import>
     <Import>https://raw.githubusercontent.com/marycore/chronicle-onto/master/onto-patterns/place.owl</Import>
     <Import>https://raw.githubusercontent.com/marycore/chronicle-onto/master/onto-patterns/time.owl</Import>
     <Declaration>
         <Class IRI="#Situation"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#conveysEmotion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#experiencesEmotion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParticipant"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://flybits/PAC/ontologies/person#Person"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#experiencesEmotion"/>
+            <Class IRI="http://flybits/PAC/ontologies/emotion#Emotion"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Situation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasParticipant"/>
+            <Class IRI="http://flybits/PAC/ontologies/person#Person"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#Situation"/>
         <ObjectSomeValuesFrom>
@@ -40,6 +63,30 @@
             <Class IRI="http://flybits/PAC/ontologies/time#Interval"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#conveysEmotion"/>
+        <Class IRI="#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#experiencesEmotion"/>
+        <Class IRI="http://flybits/PAC/ontologies/person#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParticipant"/>
+        <Class IRI="#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#conveysEmotion"/>
+        <Class IRI="http://flybits/PAC/ontologies/emotion#Emotion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#experiencesEmotion"/>
+        <Class IRI="http://flybits/PAC/ontologies/emotion#Emotion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParticipant"/>
+        <Class IRI="http://flybits/PAC/ontologies/person#Person"/>
+    </ObjectPropertyRange>
 </Ontology>
 
 
